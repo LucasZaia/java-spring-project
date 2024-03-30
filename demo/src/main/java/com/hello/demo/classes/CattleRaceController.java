@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hello.demo.db.CattleRaces;
-import com.hello.demo.services.CattleRacesService;
+import com.hello.demo.db.CattleRace;
+import com.hello.demo.services.CattleRaceService;
 
 @RestController
 @RequestMapping(consumes = "application/json", value = "/test")
-public class CattleRacesController {
+public class CattleRaceController {
 
     @Autowired
-    private CattleRacesService cattleRacesService;
+    private CattleRaceService cattleRaceService;
 
     @GetMapping
     public ResponseEntity<?> get_users () {
-        List<CattleRaces> races = cattleRacesService.list();
+        List<CattleRace> races = cattleRaceService.list();
 
         return new ResponseEntity<>(races, HttpStatus.OK);
     }

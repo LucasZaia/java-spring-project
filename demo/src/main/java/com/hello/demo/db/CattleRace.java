@@ -4,8 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
-public class CattleRaces {
+import jakarta.persistence.Table;
+
+@Entity(name = "CattleRace")
+@Table(name = "cattle_races")
+public class CattleRace {
     @Id
     @GeneratedValue
     private Long id;
